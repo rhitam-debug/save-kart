@@ -1,0 +1,15 @@
+SAVE KART — RENDER DEPLOY SETTINGS
+
+Service type: Web Service
+Runtime: Python 3
+Build command: pip install -r requirements.txt
+Start command: gunicorn app:app
+Health check path: /health
+
+Environment variables (set in Render dashboard; do not commit secrets):
+SECRET_KEY = generate a long random secret
+ADMIN_PIN = choose a new owner PIN
+KITCHEN_PIN = choose a new kitchen PIN
+PUBLIC_BASE_URL = https://YOUR-SERVICE-NAME.onrender.com
+
+Free Render storage is ephemeral. This SQLite demo is not suitable for storing real orders.
